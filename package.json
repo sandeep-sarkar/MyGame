@@ -1,0 +1,19 @@
+{
+  "name": "mygame",
+  "version": "1.0.0",
+  "description": "Developing a game for my soul",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandeep-sarkar/MyGame.git"
+  },
+  "author": "Sandeep Sarkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandeep-sarkar/MyGame/issues"
+  },
+  "homepage": "https://github.com/sandeep-sarkar/MyGame#readme"
+}
