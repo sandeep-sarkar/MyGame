@@ -1,9 +1,11 @@
 {
   "name": "mygame",
   "version": "1.0.0",
-  "description": "Developing a game for my soul",
+  "description": "This is a tank game",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch & live-server --port=8085",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,9 +13,18 @@
     "url": "git+https://github.com/sandeep-sarkar/MyGame.git"
   },
   "author": "Sandeep Sarkar",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sandeep-sarkar/MyGame/issues"
   },
-  "homepage": "https://github.com/sandeep-sarkar/MyGame#readme"
+  "homepage": "https://github.com/sandeep-sarkar/MyGame#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "phaser": "^3.55.2",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
 }
