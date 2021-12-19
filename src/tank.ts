@@ -6,6 +6,7 @@ export class Tank{
     imageLocation: string;
     name: string;
     scene: Phaser.Scene;
+    tank: Phaser.Physics.Arcade.Image; 
 
     constructor(name: string, x: number, y: number, imageLocation: string, scene: Phaser.Scene){
         this.name = name;
@@ -16,8 +17,18 @@ export class Tank{
     }
 
     init(){
-        var tank: Phaser.Physics.Arcade.Image;
-        tank = this.scene.physics.add.image(this.x, this.y, this.name);
-        tank.setInteractive;
+        this.tank = this.scene.physics.add.image(this.x, this.y, this.name);
+        this.tank.setInteractive;
+        this.tank.setCollideWorldBounds(true);
+    }
+
+    stop(){
+        this.tank.setVelocity(0);
+    }
+    moveLeft(){
+        this.tank.setVelocityX(-100);   
+    }
+    moveRight(){
+        this.tank.setVelocityX(100);
     }
 }
