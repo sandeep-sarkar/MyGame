@@ -1,4 +1,5 @@
 import "phaser";
+import { Scene } from "phaser";
 import {GameScene} from "./gameScene";
 
 type GameConfig = Phaser.Types.Core.GameConfig;
