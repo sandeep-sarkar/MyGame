@@ -42,21 +42,18 @@ export class GameScene extends Phaser.Scene {
         this.info = this.add.text(10, 10, '',
             {font: '24px Ariel Bold'});
         this.cursorkeys = this.input.keyboard.createCursorKeys();
+        this.goodTank.init();
     }
 
     update(time): void{
         //add tank to the scene
-        this.goodTank.init();
+        
+        this.goodTank.stop();
+        if (this.cursorkeys.left.isDown){
+            this.goodTank.moveLeft();
+        }
+        if (this.cursorkeys.right.isDown){
+            this.goodTank.moveRight();
+        }
     }
-
-    /** 
-    private createTank():void{
-        var tank: Phaser.Physics.Arcade.Image;
-        var x = 400;
-        var y = 530;
-        tank = this.physics.add.image(x, y, "tank");
-        tank.setInteractive();
-    }
-    **/
-
 };
