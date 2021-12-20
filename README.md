@@ -6,6 +6,7 @@ Tools used:
 
 - Phaser3
 - Typescript
+- Webpack
 
 How to start:
 --------------
