@@ -6,3 +6,7 @@ Tools used:
 
 - Phaser3
 - Typescript
+
+How to start:
+--------------
+- `npm start`
