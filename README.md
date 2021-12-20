@@ -1,5 +1,5 @@
 # MyGame
-Developing a simple single player tank game.
+Developing a simple single player tank game that can be played on the browser.
 
 Tools used:
 -----------
