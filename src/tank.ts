@@ -26,6 +26,7 @@ export class Tank{
         this.tank.setVelocity(0);
     }
     moveLeft(){
+        console.log("Move left");
         this.tank.setVelocityX(-100);   
     }
     moveRight(){

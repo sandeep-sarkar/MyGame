@@ -3,9 +3,6 @@ import {Tank} from "./tank";
 
 export class GameScene extends Phaser.Scene {
     delta: Number;
-    lastStarTime: Number;
-    starsCaught: Number;
-    starsFallen: number;
     wall: Phaser.Physics.Arcade.StaticGroup;
     info: Phaser.GameObjects.Text;
     cursorkeys: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -19,9 +16,6 @@ export class GameScene extends Phaser.Scene {
     
     init(/*params: any*/): void{
         this.delta = 1000;
-        this.lastStarTime = 0;
-        this.starsCaught = 0;
-        this.starsFallen = 0;
         this.goodTank = new Tank("goodTank", 400, 530, "assets/tank.png", this);
     }
 
