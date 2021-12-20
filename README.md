@@ -10,4 +10,8 @@ Tools used:
 
 How to start:
 --------------
+- Install npm
+- `git clone git@github.com:sandeep-sarkar/MyGame.git`
+- `cd MyGame`
+- `npm install`
 - `npm start`
