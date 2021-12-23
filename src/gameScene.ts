@@ -7,22 +7,27 @@ export class GameScene extends Phaser.Scene {
     info: Phaser.GameObjects.Text;
     cursorkeys: Phaser.Types.Input.Keyboard.CursorKeys;
     goodTank: Tank;
+    badTank: Tank;
+    startGame: boolean;
 
     constructor(){
         super({
             key:"GameScene"
         });
+        this.startGame = false;
     }
     
     init(/*params: any*/): void{
         this.delta = 1000;
         this.goodTank = new Tank("goodTank", 400, 530, "assets/tank.png", this);
+        this.badTank = new Tank("badTank", 400,20, "assets/tank_2.png", this);
     }
 
     preload(): void{
         //this.load.setBaseURL
         this.load.image("wall", "assets/wall.png");
         this.load.image(this.goodTank.name, this.goodTank.imageLocation);
+        this.load.image(this.badTank.name, this.badTank.imageLocation);
     }
 
     create(): void{
@@ -37,16 +42,23 @@ export class GameScene extends Phaser.Scene {
             {font: '24px Ariel Bold'});
         this.cursorkeys = this.input.keyboard.createCursorKeys();
         this.goodTank.init();
+        this.badTank.init();
     }
 
     update(time): void{
         //add tank to the scene
         
         this.goodTank.stop();
+        if (this.startGame == true){
+            this.badTank.moveFront();
+        }
+
         if (this.cursorkeys.left.isDown){
+            this.startGame = true;
             this.goodTank.moveLeft();
         }
         if (this.cursorkeys.right.isDown){
+            this.startGame = true;
             this.goodTank.moveRight();
         }
     }
