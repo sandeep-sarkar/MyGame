@@ -1,4 +1,5 @@
 import "phaser";
+import { Bullet } from "./bullet";
 import {Tank} from "./tank";
 
 export class GameScene extends Phaser.Scene {
@@ -9,6 +10,7 @@ export class GameScene extends Phaser.Scene {
     goodTank: Tank;
     badTank: Tank;
     startGame: boolean;
+    goodBullet: Bullet;
 
     constructor(){
         super({
@@ -19,13 +21,17 @@ export class GameScene extends Phaser.Scene {
     
     init(/*params: any*/): void{
         this.delta = 1000;
+        this.goodBullet = new Bullet("goodBullet", 0,0,"assets/bullet.png", this);
         this.goodTank = new Tank("goodTank", 400, 530, "assets/tank.png", this);
+        this.goodTank.setBullet(this.goodBullet);
         this.badTank = new Tank("badTank", 400,20, "assets/tank_2.png", this);
+
     }
 
     preload(): void{
         //this.load.setBaseURL
         this.load.image("wall", "assets/wall.png");
+        this.load.image(this.goodBullet.name, this.goodBullet.imageLocation);
         this.load.image(this.goodTank.name, this.goodTank.imageLocation);
         this.load.image(this.badTank.name, this.badTank.imageLocation);
     }
@@ -60,6 +66,10 @@ export class GameScene extends Phaser.Scene {
         if (this.cursorkeys.right.isDown){
             this.startGame = true;
             this.goodTank.moveRight();
+        }
+
+        if (this.cursorkeys.space.isDown){
+            this.goodTank.shoot();
         }
     }
 };
